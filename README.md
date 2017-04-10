@@ -12,3 +12,12 @@ npm run build
 ```
 
 最近身体越来越不行了，我想回家卖燃面~
+
+## 路由
+```
+Home/: 热映、即将上映、精选榜单等
+MovieDetail/: 电影详情页
+CommentsList/: 影评list
+Comment/: 影评详情页
+Celebrity/: 影人详情页
+```
