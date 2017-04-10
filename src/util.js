@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Get the first item that pass the test
  * by second argument function
@@ -64,3 +65,4 @@ export function isPromise (val) {
 export function assert (condition, msg) {
   if (!condition) throw new Error(`[vuex] ${msg}`)
 }
+/* eslint-enable */
