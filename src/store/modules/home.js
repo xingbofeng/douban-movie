@@ -1,40 +1,42 @@
-// import shop from '../../api/shop'
-// import * as types from '../mutation-types'
+import * as types from '../mutation-types';
 
-// // initial state
-// // shape: [{ id, quantity }]
-// const state = {
-//   added: [],
-//   checkoutStatus: null
-// }
+const state = {
+  testData: {},
+};
 
-// // getters
-// const getters = {
-//   checkoutStatus: state => state.checkoutStatus
-// }
+// getters
+const getters = {};
 
-// // actions
-// const actions = {
-//   checkout ({ commit, state }, products) {
-//     const savedCartItems = [...state.added]
-//     commit(types.CHECKOUT_REQUEST)
-//     shop.buyProducts(
-//       products,
-//       () => commit(types.CHECKOUT_SUCCESS),
-//       () => commit(types.CHECKOUT_FAILURE, { savedCartItems })
-//     )
-//   }
-// }
+// actions
+const actions = {
+  testApi({ commit }) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://api.douban.com/v2/movie/subject/1764796');
+    xhr.send(null);
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        commit(types.TEST_API, JSON.parse(xhr.responseText));
+      }
+    };
+    // fetch('http://api.douban.com/v2/movie/subject/1764796')
+    //   .then(res => res.json())
+    //   .then((json) => {
+    //     console.log(json);
+    //     commit(types.TEST_API, json);
+    //   });
+  },
+};
 
-// // mutations
-// const mutations = {
-//   [types.TEST_APP] (state) {
-//     console.log(state);
-// }
+// mutations
+const mutations = {
+  [types.TEST_API](state, testData) { // eslint-disable-line
+    state.testData = testData; // eslint-disable-line
+  },
+};
 
-// export default {
-//   state,
-//   getters,
-//   actions,
-//   mutations
-// }
+export default {
+  state,
+  getters,
+  actions,
+  mutations,
+};

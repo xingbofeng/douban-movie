@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'Home',
@@ -16,13 +16,20 @@ export default {
     };
   },
 
+  mounted() {
+    this.testApi();
+  },
   computed: mapState({
-    count: state => state.count,
-    countAlias: 'count',
-    countPlusLocalState(state) {
-      return state;
+    // testData: state => state.testData,
+    // countAlias: 'count',
+    testData(state) {
+      return state.home.testData;
     },
   }),
+
+  methods: {
+    ...mapActions(['testApi']),
+  },
 };
 
 </script>
