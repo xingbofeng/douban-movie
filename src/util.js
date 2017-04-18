@@ -65,4 +65,21 @@ export function isPromise (val) {
 export function assert (condition, msg) {
   if (!condition) throw new Error(`[vuex] ${msg}`)
 }
+
+export function ajax (url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send(null);
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText));
+        } else {
+          reject(`Error: ${xhr.status}`);
+        }
+      }
+    };
+  });
+}
 /* eslint-enable */

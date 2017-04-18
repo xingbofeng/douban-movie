@@ -5,15 +5,21 @@ import MovieDetail from '../containers/MovieDetail';
 import Comment from '../containers/Comment';
 import CommentsList from '../containers/CommentsList';
 import Celebrity from '../containers/Celebrity';
+import Search from '../containers/Search';
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home,
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search,
     },
     {
       path: '/movieDetail',

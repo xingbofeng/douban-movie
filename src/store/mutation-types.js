@@ -1,1 +1,1 @@
-export const TEST_API = 'TEST_API';
+export const HOME_DATA = 'HOME_DATA';

@@ -1,36 +1,30 @@
 import * as types from '../mutation-types';
+import { ajax } from '../../util';
+// 影院热映
+const hotMovie = ajax('/v2/movie/in_theaters');
+// 即将上映
+const commingSoon = ajax('/v2/movie/coming_soon');
 
 const state = {
-  testData: {},
+  homeData: {},
 };
 
-// getters
 const getters = {};
 
-// actions
 const actions = {
-  testApi({ commit }) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://api.douban.com/v2/movie/subject/1764796');
-    xhr.send(null);
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        commit(types.TEST_API, JSON.parse(xhr.responseText));
-      }
-    };
-    // fetch('http://api.douban.com/v2/movie/subject/1764796')
-    //   .then(res => res.json())
-    //   .then((json) => {
-    //     console.log(json);
-    //     commit(types.TEST_API, json);
-    //   });
+  getHomeData({ commit }) {
+    Promise.all([hotMovie, commingSoon]).then((data) => {
+      commit(types.HOME_DATA, {
+        hotMovie: data[0],
+        commingSoon: data[1],
+      });
+    });
   },
 };
 
-// mutations
 const mutations = {
-  [types.TEST_API](state, testData) { // eslint-disable-line
-    state.testData = testData; // eslint-disable-line
+  [types.HOME_DATA](state, homeData) {
+    state.homeData = homeData;
   },
 };
 
