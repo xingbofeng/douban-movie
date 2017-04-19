@@ -31,8 +31,8 @@ const actions = {
       usBox,
     ]).then((homeData) => {
       commit(types.HOME_DATA, homeData);
-    }).catch((err) => {
-      console.log(err);
+    }).catch((error) => {
+      commit(types.NET_ERROR, error);
     });
   },
 };

@@ -1,9 +1,10 @@
-// import * as types from './mutation-types';
+import * as types from './mutation-types';
+import { ajax } from '../util';
 
-// export const testApi = ({ commit }) => {
-//   fetch('http://api.douban.com/v2/movie/subject/1764796')
-//     .then(res => res.json())
-//     .then((json) => {
-//       commit(types.TEST_API, json);
-//     });
-// };
+export const changeCurrentMovie = ({ commit }, currentMovieId) => {
+  ajax(`/v2/movie/subject/${currentMovieId}`).then((currentMovie) => {
+    commit(types.CURRENT_MOVIE, currentMovie);
+  }).catch((error) => {
+    commit(types.NET_ERROR, error);
+  });
+};

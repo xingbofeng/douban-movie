@@ -45,10 +45,16 @@ export default {
   font-size: 0.24rem;
   font-weight: bold;
   margin-top: 0.096rem;
+  display: inline-block;
 }
 
 img {
   width: 0.2rem;
   height: 0.2rem;
+}
+
+.star {
+  transform: scale(1.3);
+  transform-origin: left top;
 }
 </style>

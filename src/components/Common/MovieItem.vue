@@ -1,7 +1,13 @@
 <template>
   <router-link to="/moviedetail">
-    <section class="movieItem">
-      <img :src="(detail.subject ? detail.subject : detail).images.large" alt="电影图片">
+    <section
+      class="movieItem"
+      @click="changeCurrentMovie(detail.id)"
+    >
+      <img
+        :src="(detail.subject ? detail.subject : detail).images.large"
+        alt="电影图片"
+      >
       <h3 class="item-title">{{ (detail.subject ? detail.subject : detail).title }}</h3>
       <star
         :average="(detail.subject ? detail.subject : detail).rating.average"
@@ -11,6 +17,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import Star from './Star';
 
 export default {
@@ -26,6 +33,10 @@ export default {
     return {
       msg: 'movieItem',
     };
+  },
+
+  methods: {
+    ...mapActions(['changeCurrentMovie']),
   },
 };
 </script>

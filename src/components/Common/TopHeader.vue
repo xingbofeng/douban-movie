@@ -42,6 +42,11 @@ header {
   align-items: center;
   font-weight: bold;
   border-bottom: 0.02rem solid #f3f3f3;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 7.5rem;
+  margin: 0 auto;
 }
 
 nav {

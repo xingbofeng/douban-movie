@@ -1,22 +1,29 @@
 <template>
   <div class="home">
-    <top-header />
+    <!-- 主逻辑：两次循环 -->
     <div
-      v-for="item in homeData"
-      :key="item.title"
+      v-if="Object.keys(homeData).length !== 0"
     >
-      <h2>
-        <span class="title">{{ item ? item.title : '' }}</span>
-        <span><router-link to="/more" class="more">更多</router-link></span>
-      </h2>
-      <div class="movieItems">
-        <movie-item
-          v-for="item in (item ? item.subjects.slice(0, 8) : {})"
-          :key="item.id"
-          :detail="item"
-        />
+      <top-header />
+      <div
+        v-for="item in homeData"
+        :key="item.title"
+      >
+        <h2>
+          <span class="title">{{ item ? item.title : '' }}</span>
+          <span><router-link to="/more" class="more">更多</router-link></span>
+        </h2>
+        <div class="movieItems">
+          <movie-item
+            v-for="item in (item ? item.subjects.slice(0, 8) : {})"
+            :key="item.id"
+            :detail="item"
+          />
+        </div>
       </div>
     </div>
+    <!-- 加载中：动画 -->
+    <loading v-else />
   </div>
 </template>
 
@@ -24,7 +31,7 @@
 import { mapState, mapActions } from 'vuex';
 import TopHeader from '../components/Common/TopHeader';
 import MovieItem from '../components/Common/MovieItem';
-
+import Loading from '../components/Common/Loading';
 
 export default {
   name: 'Home',
@@ -32,6 +39,7 @@ export default {
   components: {
     TopHeader,
     MovieItem,
+    Loading,
   },
 
   data() {
@@ -58,6 +66,10 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  padding-top: 0.74rem;
+}
+
 .movieItems {
   display: flex;
   flex-flow: row nowrap;
@@ -85,4 +97,5 @@ h2 .more {
   color: #42bd56;
   font-size: 0.3rem;
 }
+
 </style>
