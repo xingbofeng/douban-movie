@@ -6,6 +6,7 @@ import Comment from '../containers/Comment';
 import CommentsList from '../containers/CommentsList';
 import Celebrity from '../containers/Celebrity';
 import Search from '../containers/Search';
+import More from '../containers/More';
 
 Vue.use(Router);
 
@@ -20,6 +21,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search,
+    },
+    {
+      path: '/more',
+      name: 'More',
+      component: More,
     },
     {
       path: '/movieDetail',

@@ -4,6 +4,14 @@ import { ajax } from '../../util';
 const hotMovie = ajax('/v2/movie/in_theaters');
 // 即将上映
 const commingSoon = ajax('/v2/movie/coming_soon');
+// top250
+const top250 = ajax('/v2/movie/top250');
+// 口碑榜：api失效
+// const weekly = ajax('/v2/movie/weekly');
+// 北美票房榜
+const usBox = ajax('/v2/movie/us_box');
+// 新片榜：api失效
+// const newMovies = ajax('/v2/movie/new_movies');
 
 const state = {
   homeData: {},
@@ -13,11 +21,18 @@ const getters = {};
 
 const actions = {
   getHomeData({ commit }) {
-    Promise.all([hotMovie, commingSoon]).then((data) => {
-      commit(types.HOME_DATA, {
-        hotMovie: data[0],
-        commingSoon: data[1],
-      });
+    if (Object.keys(state.homeData).length !== 0) {
+      return;
+    }
+    Promise.all([
+      hotMovie,
+      commingSoon,
+      top250,
+      usBox,
+    ]).then((homeData) => {
+      commit(types.HOME_DATA, homeData);
+    }).catch((err) => {
+      console.log(err);
     });
   },
 };

@@ -1,13 +1,24 @@
 <template>
-  <section class="movieItem">
-    <img :src="detail.images.large" alt="电影图片">
-    <h3 class="item-title">{{ detail.title }}</h3>
-  </section>
+  <router-link to="/moviedetail">
+    <section class="movieItem">
+      <img :src="(detail.subject ? detail.subject : detail).images.large" alt="电影图片">
+      <h3 class="item-title">{{ (detail.subject ? detail.subject : detail).title }}</h3>
+      <star
+        :average="(detail.subject ? detail.subject : detail).rating.average"
+      />
+    </section>
+  </router-link>
 </template>
 
 <script>
+import Star from './Star';
+
 export default {
   name: 'MovieItem',
+
+  components: {
+    Star,
+  },
 
   props: ['detail'],
 

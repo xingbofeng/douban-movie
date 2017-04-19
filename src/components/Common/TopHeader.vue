@@ -17,7 +17,7 @@
         <span style="color: #2AB8CC;">小组</span>
       </router-link>
       <router-link to="/search">
-        <img src="./search.png" alt="">
+        <img src="./../../assets/search.png" alt="">
       </router-link>
     </nav>
   </header>
