@@ -1,23 +1,27 @@
 <template>
-  <router-link to="/moviedetail">
+  <router-link :to="`/moviedetail/${detail.id}`">
     <section
       class="movieItem"
-      @click="changeCurrentMovie(detail.id)"
     >
       <img
         :src="(detail.subject ? detail.subject : detail).images.large"
         alt="电影图片"
       >
       <h3 class="item-title">{{ (detail.subject ? detail.subject : detail).title }}</h3>
-      <star
-        :average="(detail.subject ? detail.subject : detail).rating.average"
-      />
+      <div class="average">
+        <star
+          :average="average"
+          :length="0.2"
+        />
+        <span v-if="average">
+          {{ average }}
+        </span>
+      </div>
     </section>
   </router-link>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import Star from './Star';
 
 export default {
@@ -29,14 +33,19 @@ export default {
 
   props: ['detail'],
 
+  computed: {
+    average() {
+      return (
+        this.detail.subject ?
+        this.detail.subject : this.detail
+      ).rating.average;
+    },
+  },
+
   data() {
     return {
       msg: 'movieItem',
     };
-  },
-
-  methods: {
-    ...mapActions(['changeCurrentMovie']),
   },
 };
 </script>
@@ -57,6 +66,7 @@ img {
 
 .item-title {
   margin-top: 0.3rem;
+  margin-bottom: 0.096rem;
   font-size: 0.3rem;
   line-height: 0.3rem;
   color: #111;
@@ -64,5 +74,12 @@ img {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.average {
+  display: flex;
+  color: #aaa;
+  font-size: 0.24rem;
+  font-weight: bold;
 }
 </style>

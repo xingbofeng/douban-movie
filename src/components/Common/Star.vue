@@ -7,8 +7,8 @@
       <img
         v-for="n in 5"
         :src="imgSrc(n)"
+        :style="`width: ${length}rem;height: ${length}rem`"
       >
-      {{ average }}
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ import starGrey from './../../assets/starGrey.png';
 export default {
   name: 'Star',
 
-  props: ['average'],
+  props: ['average', 'length'],
 
   methods: {
     imgSrc(n) {
@@ -41,20 +41,7 @@ export default {
 
 <style scoped>
 .star {
-  color: #aaa;
-  font-size: 0.24rem;
-  font-weight: bold;
-  margin-top: 0.096rem;
   display: inline-block;
 }
 
-img {
-  width: 0.2rem;
-  height: 0.2rem;
-}
-
-.star {
-  transform: scale(1.3);
-  transform-origin: left top;
-}
 </style>

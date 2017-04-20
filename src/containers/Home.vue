@@ -75,6 +75,7 @@ export default {
   flex-flow: row nowrap;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  height: 4rem;
 }
 
 .movieItems::-webkit-scrollbar {
