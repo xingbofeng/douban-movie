@@ -7,6 +7,7 @@ import CommentsList from '../containers/CommentsList';
 import Celebrity from '../containers/Celebrity';
 import Search from '../containers/Search';
 import More from '../containers/More';
+import Tag from '../containers/Tag';
 
 Vue.use(Router);
 
@@ -28,9 +29,14 @@ export default new Router({
       component: More,
     },
     {
-      path: '/movieDetail/:currentMovieId',
+      path: '/moviedetail/:currentMovieId',
       name: 'MovieDetail',
       component: MovieDetail,
+    },
+    {
+      path: '/tag',
+      name: 'Tag',
+      component: Tag,
     },
     {
       path: '/commentsList',

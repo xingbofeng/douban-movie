@@ -1,7 +1,10 @@
 # douban-movie
-暂时使用解除`Google Chrome`跨域，未来将会使用代理服务器进行转发。
+## 简介
 
-`open -a "Google Chrome" --args --disable-web-security  --user-data-dir`
+- `webpack` + `vue` + `vuex` + `vue-router` + `iView`仿写豆瓣wap端。
+- `rem响应式布局` + `Grid` + `Flexbox`的布局方式。
+- 使用`http-middleware-proxy`实现跨域。
+- 提取公共组件。
 
 使用vue全家桶的应用。初步设想是移动端，响应式。
 

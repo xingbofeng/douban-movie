@@ -14,7 +14,7 @@
           :length="0.2"
         />
         <span v-if="average">
-          {{ average }}
+          {{ average.toFixed(1) }}
         </span>
       </div>
     </section>
@@ -81,5 +81,9 @@ img {
   color: #aaa;
   font-size: 0.24rem;
   font-weight: bold;
+}
+
+.average > span {
+  margin-left: 0.03rem;
 }
 </style>

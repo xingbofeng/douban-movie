@@ -13,11 +13,38 @@
                 :average="currentMovie.rating.average"
                 :length="0.26"
               />
-              <span>{{ currentMovie.ratings_count }}人评价</span>
+              <span style="color: #494949;">
+                {{
+                  currentMovie.rating.average ?
+                    currentMovie.rating.average.toFixed(1) : '暂无评分'
+                }}
+              </span>
+              <span style="color: #aaa;">{{ currentMovie.ratings_count }}人评价</span>
             </div>
             <div class="infos">{{ infos }}</div>
           </div>
-          <aside></aside>
+          <aside>
+            <img :src="currentMovie.images.large" class="movieImage">
+          </aside>
+        </div>
+        <div class="summary">
+          <h2>{{ currentMovie.title }}的剧情简介</h2>
+          <article>
+            {{ currentMovie.summary }}
+          </article>
+        </div>
+        <div class="more">
+          <h2>查看更多豆瓣高分电影电视剧</h2>
+          <article>
+            <router-link
+              :to="`/tag`"
+              v-for="item in currentMovie.genres"
+              class="tagItem"
+              :key="item"
+            >
+              {{ item }}
+            </router-link>
+          </article>
         </div>
       </main>
     </div>
@@ -102,8 +129,7 @@ h1 {
 }
 
 .rating span {
-  color: #494949;
-  font-size: 0.24rem;
+  font-size: 0.3rem;
   font-weight: bold;
   margin-left: 0.16rem;
 }
@@ -117,5 +143,42 @@ h1 {
   color: #494949;
   font-size: 0.28rem;
   margin-top: 0.3rem;
+}
+
+.left {
+  padding-right: 0.48rem;
+}
+
+.movieImage {
+  width: 2rem;
+}
+
+.summary {
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  color: #aaa;
+  margin-bottom: 0.3rem;
+  font-size: 0.3rem;
+}
+
+article {
+  font-size: 0.3rem;
+  color: #494949;
+}
+
+.tagItem {
+  display: inline-block;
+  margin: 0.2rem 0.2rem 0 0;
+  background-color: #f5f5f5;
+  color: #494949;
+  font-size: 0.3rem;
+  line-height: 0.56rem;
+  height: 0.56rem;
+  border-radius: 0.28rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 0 0.24rem 0 0.24rem;
 }
 </style>
