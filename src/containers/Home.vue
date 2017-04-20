@@ -10,12 +10,12 @@
         :key="item.title"
       >
         <h2>
-          <span class="title">{{ item ? item.title : '' }}</span>
+          <span class="title">{{ item.title }}</span>
           <span><router-link to="/more" class="more">更多</router-link></span>
         </h2>
         <div class="movieItems">
           <movie-item
-            v-for="item in (item ? item.subjects.slice(0, 8) : {})"
+            v-for="item in item.subjects.slice(0, 8)"
             :key="item.id"
             :detail="item"
           />

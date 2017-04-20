@@ -33,10 +33,6 @@ export default {
     };
   },
 
-  created() {
-    this.changeCurrentMovie(26644002);
-  },
-
   computed: mapState({
     currentMovie(state) {
       return state.currentMovie;
