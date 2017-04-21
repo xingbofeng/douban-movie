@@ -71,8 +71,8 @@ img {
   line-height: 0.3rem;
   color: #111;
   max-width: 2rem;
+  overflow-x: hidden;
   text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
 }
 

@@ -10,3 +10,9 @@ export const changeCurrentMovie = ({ commit, state }, currentMovieId) => {
     });
   }
 };
+
+export const seeMore = ({ commit, state }, subjects) => {
+  if (state.currentSeeMore.title !== subjects.title) {
+    commit(types.CURRENT_SEE_MORE, subjects);
+  }
+};

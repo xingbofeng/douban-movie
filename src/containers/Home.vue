@@ -11,7 +11,14 @@
       >
         <h2>
           <span class="title">{{ item.title }}</span>
-          <span><router-link to="/more" class="more">更多</router-link></span>
+          <span
+            @click="seeMore({
+              title: item.title,
+              subjects: item.subjects,
+            })"
+          >
+            <router-link :to="`/more/${item.title}`" class="more">更多</router-link>
+          </span>
         </h2>
         <div class="movieItems">
           <movie-item
@@ -62,7 +69,7 @@ export default {
   }),
 
   methods: {
-    ...mapActions(['getHomeData']),
+    ...mapActions(['getHomeData', 'seeMore']),
   },
 };
 

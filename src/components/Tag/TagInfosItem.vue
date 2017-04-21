@@ -1,22 +1,24 @@
 <template>
-  <div class="tagInfosItem">
-    <main>
-      <h3>{{ title }}</h3>
-      <div class="average">
-        <star
-          :average="infos.rating.average"
-          :length="0.24"
-        />
-        <span>
-          {{ infos.rating.average ? infos.rating.average.toFixed(1) : '暂无评分' }}
-        </span>
-        <p>{{ detail }}</p>
-      </div>
-    </main>
-    <aside>
-      <img v-lazy="infos.images.large" alt="电影图片">
-    </aside>
-  </div>
+  <router-link :to="`/moviedetail/${infos.id}`">
+    <div class="tagInfosItem">
+      <main>
+        <h3>{{ title }}</h3>
+        <div class="average">
+          <star
+            :average="infos.rating.average"
+            :length="0.24"
+          />
+          <span>
+            {{ infos.rating.average ? infos.rating.average.toFixed(1) : '暂无评分' }}
+          </span>
+          <p>{{ detail }}</p>
+        </div>
+      </main>
+      <aside>
+        <img v-lazy="infos.images.large" alt="电影图片">
+      </aside>
+    </div>
+  </router-link>
 </template>
 
 <script>

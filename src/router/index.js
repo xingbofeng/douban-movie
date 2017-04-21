@@ -29,7 +29,7 @@ export default new Router({
       component: Search,
     },
     {
-      path: '/more',
+      path: '/more/:title',
       name: 'More',
       component: More,
     },
