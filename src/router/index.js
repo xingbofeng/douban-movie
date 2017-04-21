@@ -12,11 +12,16 @@ import Tag from '../containers/Tag';
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Home',
       component: Home,
+      beforeEnter: (to, before, next) => {
+        document.title = '电影 - 豆瓣';
+        next();
+      },
     },
     {
       path: '/search',
@@ -32,14 +37,22 @@ export default new Router({
       path: '/moviedetail/:currentMovieId',
       name: 'MovieDetail',
       component: MovieDetail,
+      beforeEnter: (to, before, next) => {
+        document.title = '电影 - 豆瓣';
+        next();
+      },
     },
     {
-      path: '/tag',
+      path: '/tag/:currentTagId',
       name: 'Tag',
       component: Tag,
+      beforeEnter: (to, before, next) => {
+        document.title = `关于${to.params.currentTagId}的电影 - 豆瓣`;
+        next();
+      },
     },
     {
-      path: '/commentsList',
+      path: '/commentslist',
       name: 'CommentsList',
       component: CommentsList,
     },
@@ -49,7 +62,7 @@ export default new Router({
       component: Comment,
     },
     {
-      path: '/celebrity',
+      path: '/celebrity/:celebrityId',
       name: 'Celebrity',
       component: Celebrity,
     },

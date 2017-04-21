@@ -4,7 +4,7 @@
       class="movieItem"
     >
       <img
-        :src="(detail.subject ? detail.subject : detail).images.large"
+        v-lazy="(detail.subject ? detail.subject : detail).images.large"
         alt="电影图片"
       >
       <h3 class="item-title">{{ (detail.subject ? detail.subject : detail).title }}</h3>

@@ -1,7 +1,7 @@
 <template>
   <Spin fix>
     <img src="../../assets/doubanLogo.png" alt="豆瓣logo" class="logo">
-    <Icon type="load-c" size=120 class="spinIconLoad"></Icon>
+    <icon type="load-c" size=120 class="spinIconLoad"></icon>
     <h1 class="prompt">豆瓣：我们的精神部落</h1>
   </Spin>
 </template>

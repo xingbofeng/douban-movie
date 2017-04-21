@@ -21,6 +21,7 @@
           />
         </div>
       </div>
+      <page-end />
     </div>
     <!-- 加载中：动画 -->
     <loading v-else />
@@ -32,6 +33,7 @@ import { mapState, mapActions } from 'vuex';
 import TopHeader from '../components/Common/TopHeader';
 import MovieItem from '../components/Common/MovieItem';
 import Loading from '../components/Common/Loading';
+import PageEnd from '../components/Common/PageEnd';
 
 export default {
   name: 'Home',
@@ -40,6 +42,7 @@ export default {
     TopHeader,
     MovieItem,
     Loading,
+    PageEnd,
   },
 
   data() {
