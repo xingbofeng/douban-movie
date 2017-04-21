@@ -1,52 +1,22 @@
 # douban-movie
 ## 简介
+使用[豆瓣api](https://developers.douban.com/wiki/?title=movie_v2)做到还原豆瓣电影wap端模板。
 
 - `webpack` + `vue` + `vuex` + `vue-router` + `iView`仿写豆瓣wap端。
 - `rem响应式布局` + `Grid` + `Flexbox`的布局方式。
-- 使用`http-middleware-proxy`实现跨域。
+- 使用`vue-lazyload`实现图片懒加载。
+- 使用`http-proxy-middleware`实现跨域。
 - 提取公共组件。
-
-使用vue全家桶的应用。初步设想是移动端，响应式。
-
-[豆瓣api](https://developers.douban.com/wiki/?title=movie_v2)
-
-```
-                  _oo0oo_
-                 o8888888o
-                 88" . "88
-                 (| -_- |)
-                 0\  =  /0
-               ___/`---'\___
-             .' \\|     |// '.
-            / \\|||  :  |||// \
-           / _||||| -:- |||||- \
-          |   | \\\  -  /// |   |
-          | \_|  ''\---/''  |_/ |
-          \  .-\__  '-'  ___/-. /
-        ___'. .'  /--.--\  `. .'___
-     ."" '<  `.___\_<|>_/___.' >' "".
-    | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-    \  \ `_.   \_ __\ /__ _/   .-` /  /
-=====`-.____`.___ \_____/___.-`___.-'=====
-                  `=---='
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-          佛祖保佑         永无BUG
-```
 
 ```
 npm install
 npm run dev
-npm run build
 ```
 
 ## 路由
-```
-Home/: 热映、即将上映、精选榜单等
-MovieDetail/: 电影详情页
-CommentsList/: 影评list
-Comment/: 影评详情页
-Celebrity/: 影人详情页
-```
+- /: 热映、即将上映、精选榜单等
+- /moviedetail/:id: 电影详情页
+- /tag/:id: 电影分类详情页
+- /celebrity/:id: 影人详情页
+- /more/:id: 查看更多
+- /search: 电影搜索页
