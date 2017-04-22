@@ -6,7 +6,7 @@
       <div class="MovieItems">
         <div
           class="movieItemContainer"
-          v-for="item in currentSeeMore"
+          v-for="item in currentSeeMore.subjects"
         >
           <movie-item
             :key="item.id"

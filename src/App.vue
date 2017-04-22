@@ -38,6 +38,7 @@ export default {
 <style>
 #app {
   max-width: 7.5rem;
+  max-height: 10.24rem;
   margin: 0 auto;
 }
 </style>

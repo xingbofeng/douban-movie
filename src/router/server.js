@@ -9,20 +9,24 @@ const Ajax = url => new Promise((resolve, reject) => {
       if (xhr.status === 200) {
         resolve(JSON.parse(xhr.responseText));
       } else {
-        reject(`Error: ${xhr.status}`);
+        reject(`错误: ${xhr.status}`);
       }
     }
   };
 });
 
 // 影院热映
-export const hotMovie = Ajax(`${serverConfig}/v2/movie/in_theaters`);
+export const hotMovie = (count, start) =>
+  Ajax(`${serverConfig}/v2/movie/in_theaters?count=${count}&start=${start}`);
 // 即将上映
-export const commingSoon = Ajax(`${serverConfig}/v2/movie/coming_soon`);
+export const commingSoon = (count, start) =>
+  Ajax(`${serverConfig}/v2/movie/coming_soon?count=${count}&start=${start}`);
 // top250
-export const top250 = Ajax(`${serverConfig}/v2/movie/top250`);
+export const top250 = (count, start) =>
+  Ajax(`${serverConfig}/v2/movie/top250?count=${count}&start=${start}`);
 // 北美票房榜
-export const usBox = Ajax(`${serverConfig}/v2/movie/us_box`);
+export const usBox = (count, start) =>
+  Ajax(`${serverConfig}/v2/movie/us_box?count=${count}&start=${start}`);
 // 当前电影详情信息
 export const currentMovie = currentMovieId =>
   Ajax(`${serverConfig}/v2/movie/subject/${currentMovieId}`);

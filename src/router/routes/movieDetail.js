@@ -28,6 +28,7 @@ export default {
       store.commit(types.NET_STATUS, '');
       document.title = `${currentMovieDetail.title} - 电影 - 豆瓣`;
     }).catch((error) => {
+      document.title = '出错啦 Oops… - 豆瓣';
       store.commit(types.NET_STATUS, error);
       store.commit(types.LOADING_FLAG, false);
     });
