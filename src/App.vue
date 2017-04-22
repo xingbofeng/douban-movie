@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <h1 v-if="netStatus">{{ netStatus }}</h1>
-    <loading v-else-if="!netStatus && loadingFlag" />
+    <net-error
+      v-if="netStatus"
+      :netStatus="netStatus"
+    />
+    <loading
+      v-else-if="!netStatus && loadingFlag"
+    />
     <router-view v-else></router-view>
   </div>
 </template>
@@ -9,12 +14,14 @@
 <script>
 import { mapState } from 'vuex';
 import Loading from './components/Common/Loading';
+import NetError from './components/Common/Error';
 
 export default {
   name: 'App',
 
   components: {
     Loading,
+    NetError,
   },
 
   computed: mapState({

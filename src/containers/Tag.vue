@@ -1,8 +1,6 @@
 <template>
   <div class="tag">
-    <section
-      v-if="new RegExp($route.params.currentTagId).test(tagData.title)"
-    >
+    <section>
       <top-header />
       <div class="tagInfos">
         <h1>{{ $route.params.currentTagId }}</h1>
@@ -28,14 +26,12 @@
       </footer>
       <page-end />
     </section>
-    <loading v-else />
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 import TopHeader from '../components/Common/TopHeader';
-import Loading from '../components/Common/Loading';
 import TagInfosItem from '../components/Tag/TagInfosItem';
 import PageEnd from '../components/Common/PageEnd';
 
@@ -44,17 +40,8 @@ export default {
 
   components: {
     TopHeader,
-    Loading,
     TagInfosItem,
     PageEnd,
-  },
-
-  created() {
-    const title = this.tagData.title;
-    const tagReg = new RegExp(this.$route.params.currentTagId);
-    if (!tagReg.test(title)) {
-      this.getTagData(this.$route.params.currentTagId);
-    }
   },
 
   data() {
@@ -66,7 +53,7 @@ export default {
   computed: {
     ...mapState({
       tagData(state) {
-        return state.tag.tagData;
+        return state.tag.tagData[`${this.$route.params.currentTagId}`];
       },
     }),
 
@@ -79,7 +66,6 @@ export default {
   },
 
   methods: {
-    ...mapActions(['getTagData']),
     changePage(flag) {
       // 第一页不能往前翻页，最后一页不能往后翻页。
       if ((this.currentPage === 1 && flag === 'reduce') ||

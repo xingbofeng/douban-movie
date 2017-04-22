@@ -1,24 +1,24 @@
-import Home from '../containers/Home';
-import store from '../store';
-import * as types from '../store/mutation-types';
+import Home from '../../containers/Home';
+import store from '../../store';
+import * as types from '../../store/mutation-types';
 import {
   hotMovie,
   commingSoon,
   top250,
   usBox,
-} from './server';
+} from '../server';
 
 export default {
   path: '/',
   name: 'Home',
   component: Home,
   beforeEnter: (to, before, next) => {
+    document.title = '电影 - 豆瓣';
     if (Object.keys(store.state.home.homeData).length !== 0) {
       store.commit(types.LOADING_FLAG, false);
       next();
       return;
     }
-    document.title = '电影 - 豆瓣';
     store.commit(types.LOADING_FLAG, true);
     Promise.all([
       hotMovie,

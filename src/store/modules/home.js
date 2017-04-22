@@ -6,8 +6,7 @@ const state = {
 
 const getters = {};
 
-const actions = {
-};
+const actions = {};
 
 const mutations = {
   [types.HOME_DATA](state, homeData) {

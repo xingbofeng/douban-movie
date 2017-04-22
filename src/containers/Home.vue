@@ -10,12 +10,7 @@
       >
         <h2>
           <span class="title">{{ item.title }}</span>
-          <span
-            @click="seeMore({
-              title: item.title,
-              subjects: item.subjects,
-            })"
-          >
+          <span>
             <router-link :to="`/more/${item.title}`" class="more">更多</router-link>
           </span>
         </h2>
@@ -33,10 +28,9 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 import TopHeader from '../components/Common/TopHeader';
 import MovieItem from '../components/Common/MovieItem';
-import Loading from '../components/Common/Loading';
 import PageEnd from '../components/Common/PageEnd';
 
 export default {
@@ -45,18 +39,7 @@ export default {
   components: {
     TopHeader,
     MovieItem,
-    Loading,
     PageEnd,
-  },
-
-  data() {
-    return {
-    };
-  },
-
-  created() {
-    // 获取数据
-    // this.getHomeData();
   },
 
   computed: mapState({
@@ -64,10 +47,6 @@ export default {
       return state.home.homeData;
     },
   }),
-
-  methods: {
-    ...mapActions(['getHomeData', 'seeMore']),
-  },
 };
 
 </script>

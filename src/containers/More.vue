@@ -1,24 +1,21 @@
 <template>
   <div class="more">
-    <div v-if="currentSeeMore.title === $route.params.title">
-      <top-header />
-      <main>
-        <h1>{{ currentSeeMore.title }}</h1>
-        <div class="MovieItems">
-          <div
-            class="movieItemContainer"
-            v-for="item in currentSeeMore.subjects"
-          >
-            <movie-item
-              :key="item.id"
-              :detail="item"
-            />
-          </div>
+    <top-header />
+    <main>
+      <h1>{{ this.$route.params.title }}</h1>
+      <div class="MovieItems">
+        <div
+          class="movieItemContainer"
+          v-for="item in currentSeeMore"
+        >
+          <movie-item
+            :key="item.id"
+            :detail="item"
+          />
         </div>
-      </main>
-      <page-end />
-    </div>
-    <loading v-else />
+      </div>
+    </main>
+    <page-end />
   </div>
 </template>
 
@@ -27,7 +24,6 @@ import { mapState } from 'vuex';
 import TopHeader from '../components/Common/TopHeader';
 import PageEnd from '../components/Common/PageEnd';
 import MovieItem from '../components/Common/MovieItem';
-import Loading from '../components/Common/Loading';
 
 export default {
   name: 'More',
@@ -36,12 +32,11 @@ export default {
     TopHeader,
     PageEnd,
     MovieItem,
-    Loading,
   },
 
   computed: mapState({
     currentSeeMore(state) {
-      return state.currentSeeMore;
+      return state.more.currentSeeMore[`${this.$route.params.title}`];
     },
   }),
 };

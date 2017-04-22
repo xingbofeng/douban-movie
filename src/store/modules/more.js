@@ -1,7 +1,7 @@
 import * as types from '../mutation-types';
 
 const state = {
-  tagData: {},
+  currentSeeMore: {},
 };
 
 const getters = {};
@@ -9,8 +9,8 @@ const getters = {};
 const actions = {};
 
 const mutations = {
-  [types.CURRENT_TAG](state, tagData) {
-    state.tagData = tagData;
+  [types.CURRENT_SEE_MORE](state, currentSeeMore) {
+    state.currentSeeMore = currentSeeMore;
   },
 };
 
