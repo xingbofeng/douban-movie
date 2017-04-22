@@ -9,8 +9,12 @@ const mutations = {
     state.currentSeeMore = currentSeeMore;
   },
 
-  [types.NET_ERROR](state, netError) {
-    state.netError = netError;
+  [types.NET_STATUS](state, netStatus) {
+    state.netStatus = netStatus;
+  },
+
+  [types.LOADING_FLAG](state, loadingFlag) {
+    state.loadingFlag = loadingFlag;
   },
 };
 

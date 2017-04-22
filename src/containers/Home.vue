@@ -2,7 +2,6 @@
   <div class="home">
     <!-- 主逻辑：两次循环 -->
     <div
-      v-if="Object.keys(homeData).length !== 0"
     >
       <top-header />
       <div
@@ -30,8 +29,6 @@
       </div>
       <page-end />
     </div>
-    <!-- 加载中：动画 -->
-    <loading v-else />
   </div>
 </template>
 
@@ -59,7 +56,7 @@ export default {
 
   created() {
     // 获取数据
-    this.getHomeData();
+    // this.getHomeData();
   },
 
   computed: mapState({

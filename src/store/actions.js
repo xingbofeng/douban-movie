@@ -6,7 +6,7 @@ export const changeCurrentMovie = ({ commit, state }, currentMovieId) => {
     ajax(`/v2/movie/subject/${currentMovieId}`).then((currentMovie) => {
       commit(types.CURRENT_MOVIE, currentMovie);
     }).catch((error) => {
-      commit(types.NET_ERROR, error);
+      commit(types.NET_STATUS, error);
     });
   }
 };

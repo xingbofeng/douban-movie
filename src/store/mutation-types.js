@@ -1,5 +1,7 @@
-// 网络错误
-export const NET_ERROR = 'NET_ERROR';
+// 网络状态
+export const NET_STATUS = 'NET_STATUS';
+// 加载中的状态
+export const LOADING_FLAG = 'LOADING_FLAG';
 // 获取初始数据
 export const HOME_DATA = 'HOME_DATA';
 // 当前浏览电影条目

@@ -14,6 +14,8 @@ export default new Vuex.Store({
   state: {
     currentMovie: {},
     currentSeeMore: {},
+    netStatus: '',
+    loadingFlag: true,
   },
   mutations: mutations.default,
   actions,

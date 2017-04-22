@@ -14,7 +14,7 @@ const actions = {
       .then((tagData) => {
         commit(types.CURRENT_TAG, tagData);
       }).catch((error) => {
-        commit(types.NET_ERROR, error);
+        commit(types.NET_STATUS, error);
       });
   },
 };
