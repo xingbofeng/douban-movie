@@ -1,0 +1,13 @@
+<!DOCTYPE html><html style="font-size: 50px"><head><meta charset=utf-8><title>电影 - 豆瓣</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel="shortcut icon" type=image/x-icon href=https://img3.doubanio.com/pics/douban-icons/favicon_48x48.png media=screen><link href=static/css/app.4243a87e748e43e1cab59085112045a7.css rel=stylesheet></head><body><div id=app></div><script>(function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            var clientWidth = docEl.clientWidth > 750 ? 360 : docEl.clientWidth ;
+            if (!clientWidth) return;
+            docEl.style.fontSize = clientWidth / 750 * 100 + 'px';
+          };
+        if (!doc.addEventListener) return;
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        if (docEl.clientWidth > 640) return;
+        win.addEventListener(resizeEvt, recalc, false);
+      })(document, window);</script><script type=text/javascript src=static/js/manifest.7526ca92921057c75047.js></script><script type=text/javascript src=static/js/vendor.82e97d484b216868f424.js></script><script type=text/javascript src=static/js/app.ba7f1cbdc54a206a1d0c.js></script></body></html>

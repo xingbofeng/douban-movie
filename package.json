@@ -12,6 +12,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "iview": "^2.0.0-rc.10",
     "vue": "^2.2.2",
     "vue-lazyload": "^1.0.3",

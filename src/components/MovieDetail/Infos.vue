@@ -48,7 +48,7 @@
       <h2>影人</h2>
       <article class="celebrityItems">
         <router-link
-          :to="`/celebrity/${item.id}`"
+          :to="`/tag/${item.name}`"
           v-for="item in celebrityItems"
           :key="item.id"
         >

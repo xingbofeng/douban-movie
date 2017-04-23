@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Celebrity from '../containers/Celebrity';
 import home from './routes/home';
 import movieDetail from './routes/movieDetail';
 import more from './routes/more';
@@ -18,11 +17,6 @@ export default new Router({
     more,
     tag,
     search,
-    {
-      path: '/celebrity/:celebrityId',
-      name: 'Celebrity',
-      component: Celebrity,
-    },
     error, // 404页面一定要在最后面
   ],
 });

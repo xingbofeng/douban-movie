@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/moviedetail/${detail.id}`">
+  <router-link :to="`/moviedetail/${(detail.subject ? detail.subject : detail).id}`">
     <section
       class="movieItem"
     >
