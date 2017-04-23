@@ -24,11 +24,12 @@ web端访问已设置宽度适配。
 [点击进入](http://www.angryzhangzhe.cn:3000/)
 
 ## 部分效果截图
-![](./picture.gif)
+![](https://user-gold-cdn.xitu.io/2017/4/23/1e8f797a25d254918d1d0409550e2727.gif)
 
 ## 工具&技能
 - `vue` + `vuex`+ `vue-router`全家桶
-- `webpack` + `webpack-dev-server` + `http-proxy-middleware`进行http请求转发，实现跨域请求
+- `webpack` + `webpack-dev-server` + `http-proxy-middleware`进行本地开发环境http请求转发，实现跨域请求
+- 线上使用`express`的`http-proxy-middleware`实现请求转发
 - `iView`一款vue的组件库
 - `vue-lazyload`实现图片懒加载
 - `rem` + `flex` + `grid`实现移动端适配
@@ -37,7 +38,7 @@ web端访问已设置宽度适配。
 
 ## 使用
 ```
-https://github.com/xingbofeng/douban-movie.git
+git clone https://github.com/xingbofeng/douban-movie.git
 
 cd douban-movie
 
@@ -53,7 +54,7 @@ npm run dev
 - [x] 预览电影评分
 
 ### 搜索页
-输入搜索关键词，`回车键`搜索，或者点击`放大镜`图标
+输入搜索关键词，`回车键`搜索，或者点击搜索按钮。
 - [x] 搜索功能
 - [x] 热门搜索词条的记录
 
@@ -98,7 +99,7 @@ npm run dev
 ```
 
 ## 开发心得
-1. 如何缓存数据
+### 如何缓存数据
 
 这个问题在我之前的的项目总结已经总结过。
 
@@ -140,7 +141,7 @@ beforeEnter: (to, before, next) => {
 }
 ```
 
-2. 翻页加载
+### 翻页加载
 
 其实这个在之前的React项目中也有做过，设置一个`currentPage`的状态，然后根据这个状态来渲染页面。
 
@@ -192,7 +193,7 @@ methods: {
     window.scrollTo(0, 0);
   },
 ```
-3. 滚动加载
+### 滚动加载
 
 类似于瀑布流布局的实现方式，当用户滚动到距离页面底部一定范围的时候去请求后端接口。
 
@@ -225,7 +226,7 @@ handleScroll() {
 }
 ```
 
-4. 滚动节流
+### 滚动节流
 
 滚动节流主要作用是控制滚动事件的频率，设置一个`flag`。未超过频率则直接在函数中返回。
 
@@ -266,7 +267,7 @@ scrolling() {
 </template>
 ```
 
-6. 在路由钩子函数中改变状态
+### 在路由钩子函数中改变状态
 
 之前在公司做React项目的时候运用了[universal-router](https://github.com/kriasoft/universal-router)，当时我们可以在进入路由的时候dispatch一个action改变状态，并且使用async/await函数实现异步。
 
@@ -316,7 +317,7 @@ beforeEnter: (to, before, next) => {
 }
 ```
 
-7. Ajax的封装
+### Ajax的封装
 
 其实我就是不想用Ajax操作的相关库罢了……
 
@@ -358,7 +359,7 @@ export const getTagData = (tag, count, start) =>
   Ajax(`${serverConfig}/v2/movie/search?tag=${tag}&count=${count}&start=${start}`);
 ```
 
-8. 代理的配置
+### 代理的配置
 
 为了解决浏览器跨域问题，需要在本地服务端配合实现请求转发。
 
@@ -396,7 +397,7 @@ app.get('/', function (req, res) {
 app.listen(3000);
 ```
 
-9. 移动端的适配
+### 移动端的适配
 
 我们使用`rem`作单位，本项目中标准为1rem = 100px，适配750px设备。
 
@@ -422,4 +423,11 @@ app.listen(3000);
 })(document, window);
 ```
 
-文档借鉴自我的同学[ShanaMaid](https://github.com/ShanaMaid)
+文档借鉴自我的同学[ShanaMaid](https://github.com/ShanaMaid)。
+## 支持
+
+BUG提交请发送邮箱: me@xingbofeng.com
+
+欢迎`issue`，`pr`，`star` or `follow`！我将继续开源更多有趣的项目!
+
+你的支持将有助于项目维护以及提高用户体验，感谢各位的支持！
