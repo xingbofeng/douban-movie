@@ -93,7 +93,9 @@ export default {
           start: count + start,
         });
         // 需要使用localStorge保存当前的页码信息，再次进入可以有这个页码信息。
+        const doubanMovieCurrentPage = JSON.parse(window.localStorage.doubanMovieCurrentPage);
         window.localStorage.doubanMovieCurrentPage = JSON.stringify({
+          ...doubanMovieCurrentPage,
           [`${currentTagId}`]: this.currentPage,
         });
       } else {

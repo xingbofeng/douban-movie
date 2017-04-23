@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Celebrity from '../containers/Celebrity';
-import Search from '../containers/Search';
 import home from './routes/home';
 import movieDetail from './routes/movieDetail';
 import more from './routes/more';
 import tag from './routes/tag';
 import error from './routes/error';
+import search from './routes/search';
 
 Vue.use(Router);
 
@@ -17,11 +17,7 @@ export default new Router({
     movieDetail,
     more,
     tag,
-    {
-      path: '/search',
-      name: 'Search',
-      component: Search,
-    },
+    search,
     {
       path: '/celebrity/:celebrityId',
       name: 'Celebrity',

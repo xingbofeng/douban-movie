@@ -37,8 +37,6 @@ export default {
   data() {
     return {
       requestFlag: true, // 是否请求接口
-      // count: 18, // 用于每次请求数量，默认为18
-      // start: 18, // 当前展示的数量，默认为18
     };
   },
 

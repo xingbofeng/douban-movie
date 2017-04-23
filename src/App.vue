@@ -24,6 +24,11 @@ export default {
     NetError,
   },
 
+  created() {
+    // 销毁最近所看电影实例
+    window.localStorage.doubanMovieCurrentPage = '{}';
+  },
+
   computed: mapState({
     netStatus(state) {
       return state.netStatus;
