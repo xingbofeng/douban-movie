@@ -418,7 +418,7 @@ app.listen(3000);
     };
   if (!doc.addEventListener) return;
   doc.addEventListener('DOMContentLoaded', recalc, false);
-  if (docEl.clientWidth > 640) return;
+  if (docEl.clientWidth > 750) return;
   win.addEventListener(resizeEvt, recalc, false);
 })(document, window);
 ```
