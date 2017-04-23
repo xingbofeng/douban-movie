@@ -31,5 +31,5 @@ export const usBox = (count, start) =>
 export const currentMovie = currentMovieId =>
   Ajax(`${serverConfig}/v2/movie/subject/${currentMovieId}`);
 // 当前标签详情信息
-export const getTagData = tag =>
-  Ajax(`${serverConfig}/v2/movie/search?tag=${tag}`);
+export const getTagData = (tag, count, start) =>
+  Ajax(`${serverConfig}/v2/movie/search?tag=${tag}&count=${count}&start=${start}`);

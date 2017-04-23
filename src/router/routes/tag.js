@@ -18,7 +18,7 @@ export default {
       return;
     }
     store.commit(types.LOADING_FLAG, true);
-    getTagData(currentTagId).then((tagData) => {
+    getTagData(currentTagId, 20, 0).then((tagData) => {
       // 成功则commit后台接口的数据，并把NET_ERROR的数据置空，并把加载中的状态置为false。
       store.commit(types.CURRENT_TAG, {
         [`${currentTagId}`]: tagData,

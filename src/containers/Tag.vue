@@ -19,7 +19,7 @@
             @click.prevent.stop="changePage('reduce')"
           >上页</button>
           <button
-            :class="{ noClick: currentPage === Math.ceil(tagData.subjects.length / 10) }"
+            :class="{ noClick: currentPage === Math.ceil(tagData.total / 10) }"
             @click.prevent.stop="changePage('add')"
           >下页</button>
         </div>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import TopHeader from '../components/Common/TopHeader';
 import TagInfosItem from '../components/Tag/TagInfosItem';
 import PageEnd from '../components/Common/PageEnd';
@@ -50,6 +50,14 @@ export default {
     };
   },
 
+  created() {
+    const currentTagId = this.$route.params.currentTagId;
+    const currentPage = JSON.parse(window.localStorage.doubanMovieCurrentPage)[currentTagId];
+    if (currentPage) {
+      this.currentPage = currentPage;
+    }
+  },
+
   computed: {
     ...mapState({
       tagData(state) {
@@ -66,15 +74,28 @@ export default {
   },
 
   methods: {
+    ...mapActions(['getMoreTagData']),
     changePage(flag) {
+      const currentTagId = this.$route.params.currentTagId;
+      const { start, count } = this.tagData;
       // 第一页不能往前翻页，最后一页不能往后翻页。
       if ((this.currentPage === 1 && flag === 'reduce') ||
-        (this.currentPage === Math.ceil(this.tagData.subjects.length / 10) && flag === 'add')
+        (this.currentPage === Math.ceil(this.tagData.total / 10) && flag === 'add')
       ) {
         return;
       }
       if (flag === 'add') {
         this.currentPage = this.currentPage + 1;
+        // 每次请求十条数据
+        this.getMoreTagData({
+          tag: currentTagId,
+          count: 10,
+          start: count + start,
+        });
+        // 需要使用localStorge保存当前的页码信息，再次进入可以有这个页码信息。
+        window.localStorage.doubanMovieCurrentPage = JSON.stringify({
+          [`${currentTagId}`]: this.currentPage,
+        });
       } else {
         this.currentPage = this.currentPage - 1;
       }
