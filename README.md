@@ -256,11 +256,7 @@ scrolling() {
 }
 ```
 
-<<<<<<< HEAD
 ### 404 and loading
-=======
-### 404与加载页面的实现
->>>>>>> 1137402ded4d517f7b0750bc5ffd964565f4649f
 
 set two states in `vuex`.
 
@@ -433,7 +429,7 @@ The browser run the codes following，change the `font-size` of the document.
 })(document, window);
 ```
 
-Chinese document referencing my student [ShanaMaid](https://github.com/ShanaMaid)!
+Chinese document referencing my friend [ShanaMaid](https://github.com/ShanaMaid)!
 ## Support
 
 Thanks for you support,being glad for your `star`, `pr`, `follow` and `issue`.
