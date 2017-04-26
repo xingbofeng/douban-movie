@@ -1,23 +1,29 @@
-# douban-movie
-It is an application,like [电影 - 豆瓣](https://m.douban.com/movie/).
+# douban-movie(豆瓣电影wap版)
+用vue全家桶仿写豆瓣电影wap版。
 
-[中文文档](./README_ZH.md)
+最近在公司项目中尝试使用vue，但奈何自己初学水平有限，上了vue没有上vuex，开发过程特别难受。
 
-because the limit of [open API](https://developers.douban.com/wiki/?title=movie_v2#subject) is 40 times / minute.I recommended you clone this project to you own local environment.
+于是玩一玩本项目，算是对相关技术更加熟悉了。
 
-Enter GitHub to see [code](https://github.com/xingbofeng/douban-movie)!
+原计划仿写完所有页面，碍于豆瓣的接口API有限，实现页面也有限。
 
-Thanks for you support, waiting for your `issue`, `pr`, `star` or `follow`!I will release more interesting project in the future!
+由于公开的[豆瓣接口](https://developers.douban.com/wiki/?title=movie_v2#subject)具有访问次数限制，克隆到本地体验效果更加！
 
-recommended some project writing by myself.
-- [wx-audio](https://github.com/xingbofeng/wx-audio)
-- [paintCanvas](https://github.com/xingbofeng/paintCanvas)
-- [css-grid-flex](https://github.com/xingbofeng/css-grid-flex)
+web端访问已设置宽度适配。
 
-## Online
-[Click Here](http://www.angryzhangzhe.cn:3000/)
+进入GitHub查看[本项目源码](https://github.com/xingbofeng/douban-movie)
 
-Or you can clone this project to you own local environment, then enjoy this project online：
+欢迎`issue`，`pr`，`star` or `follow`！我将继续开源更多有趣的项目！
+
+推荐一些之前写的新手入门项目
+- [wx-audio(微信小程序：音乐播放器)](https://github.com/xingbofeng/wx-audio)
+- [paintCanvas(vue实现的你画我猜)](https://github.com/xingbofeng/paintCanvas)
+- [css-grid-flex(关于css的grid布局和flex布局的入门心得)](https://github.com/xingbofeng/css-grid-flex)
+
+## 在线版
+[点击进入](http://www.angryzhangzhe.cn:3000/)
+
+本地体验线上版本：
 
 ```
 git clone https://github.com/xingbofeng/douban-movie.git
@@ -28,9 +34,9 @@ npm install
 
 node server/index.js
 ```
-Then open your browser, and go to http://localhost:3000/ to enjoy it!
+打开浏览器访问http://localhost:3000/ 体验！
 
-## Dev
+## 使用
 ```
 git clone https://github.com/xingbofeng/douban-movie.git
 
@@ -40,89 +46,94 @@ npm install
 
 npm run dev
 ```
-Then open your browser, and go to http://localhost:8080/ to enjoy it!
+打开浏览器访问http://localhost:8080/ 体验！
 
-## Picture.gif
+## 部分效果截图
 ![](https://user-gold-cdn.xitu.io/2017/4/23/1e8f797a25d254918d1d0409550e2727.gif)
 
-## Technology stack
-- `vue` + `vuex`+ `vue-router` vue based project
-- `webpack` + `webpack-dev-server` + `http-proxy-middleware` dev environment we use webpack-dev-server and http-proxy-middleware.
-- `express` + `http-proxy-middleware` online we use express and http-proxy-middleware
-- `iView` UI components library
-- `vue-lazyload` help us lazyload images
-- `rem` + `flex` + `grid` responsive layout in mobile
-- `postman` test our interface
+## 工具&技能
+- `vue` + `vuex`+ `vue-router`全家桶
+- `webpack` + `webpack-dev-server` + `http-proxy-middleware`进行本地开发环境http请求转发，实现跨域请求
+- 线上使用`express`的`http-proxy-middleware`实现请求转发
+- `iView`一款vue的组件库
+- `vue-lazyload`实现图片懒加载
+- `rem` + `flex` + `grid`实现移动端适配
+- `postman` 接口测试工具
 
-## What's this?
-### src/containers/Home.vue
-- [x] hot-movie, comming-soon, top250 and us-box.
-- [x] horizontal scrolling.
-- [x] preview the score of the movie.
+## 实现功能
+### 首页
+- [x] 影院热映、即将上映、top250、北美票房榜
+- [x] 电影条目可横向滚动
+- [x] 预览电影评分
 
-### src/containers/Search.vue
-You should input some word which is you want to search, then press `Enter` and begin to search, or you can click the button of search.
-- [x] search.
-- [x] save the hot search record.
+### 搜索页
+输入搜索关键词，`回车键`搜索，或者点击搜索按钮。
+- [x] 搜索功能
+- [x] 热门搜索词条的记录
 
-### src/containers/More.vue
-- [x] preview the score of the movie.
-- [x] loading when you scroll.
-- [x] save the data you accessd to `vuex`.
+### 查看更多
+- [x] 预览电影评分
+- [x] 滚动动态加载
+- [x] 数据缓存入vuex
 
-### src/containers/MovieDetail.vue
-- [x] score of the movie.
-- [x] information of the movie.
-- [x] actors list.
-- [x] the plot.
-- [x] save the data you accessd to `vuex`.
+### 电影详情
+- [x] 电影评分
+- [x] 电影条目
+- [x] 演员列表
+- [x] 剧情简介
+- [x] 数据缓存入vuex
 
-### src/containers/Tah.vue
-- [x] turn the page.
-- [x] lazyload images.
-- [x] preview the information of the movie.
-- [x] cache your browsing.
+### 搜索结果页
+- [x] 翻页功能
+- [x] 图片懒加载
+- [x] 预览电影条目
+- [x] 本地缓存浏览信息
 
 ## 目录结构
 ```
 |
 |—— build 
 |—— config
-|—— server
-| |—— index.js : the entry of the server.
-| |—— static/ : static files after packaging.
-| |__ index.html : the entry of this application.
+|—— server 服务端
+| |—— index.js 服务端启动入口文件
+| |—— static 打包后的资源文件
+| |__ index.html 网页入口
 |
-|——src : dev resources.
-| |—— assets : images
+|——src 资源文件
+| |—— assets 组件静态资源库
 | |—— components/
-| |    |____ Common/ : reusable components
-| |    |____ ... : other components of the own page.
+| |    |____ Common/ 可复用的组件
+| |    |____ ... 其它不可复用的单独组件
 | |
 | |—— router/
-| |    |____ index.js : the entry of router.
-| |    |____ server.js : export ajax function.
-| |    |____ serverConfig.js : export the server detail.
-| |    |____ routes/ : every page's router, changing the state of `vuex` at its lifecycle function.
+| |    |____ index.js 路由入口
+| |    |____ server.js 封装`Ajax`函数
+| |    |____ serverConfig.js 服务端接口配置
+| |    |____ routes/ 每个页面的路由, 我们在其生命周期钩子函数中改变`vuex`中的状态
 | |
-| |—— store : vuex
-| |—— App.vue : douban-movieSPA
-| |__ main.js : the entry of douban-movieSPA
+| |—— store vuex状态管理
+| |—— App.vue douban-movieSPA
+| |__ main.js douban-movieSPA入口
 |
-|__ static : static files
+|__ static 静态资源目录
 
 ```
 
-## What did I learnt in this project?
-### How to save data in vuex?
+## 开发心得
+### 如何缓存数据
 
+这个问题在我之前的的项目总结已经总结过。
+
+加入我们有电影条目A、B、C三个电影条目详情。进入A加载A，进入B加载B。此时也要把A缓存入vuex中。
+
+可以类似于下面的写法。
 ```json
 {
   [`${A.id}`]: A,
   ...store.state
 }
 ```
-see the codes of `/src/router/routes`.
+具体代码可见`/src/router/routes`下列相关文件
 ```javascript
 beforeEnter: (to, before, next) => {
   const currentMovieId = to.params.currentMovieId;
@@ -151,11 +162,11 @@ beforeEnter: (to, before, next) => {
 }
 ```
 
-### How to turn the page and load?
+### 翻页加载
 
-We set a state named `currentPage`，everytime we change this state, the page will rerender.
+其实这个在之前的React项目中也有做过，设置一个`currentPage`的状态，然后根据这个状态来渲染页面。
 
-see the codes of `/src/containers/Tag.vue`.
+具体代码可见`/src/containers/Tag.vue`。
 ```javascript
 computed: {
   ...mapState({
@@ -203,11 +214,11 @@ methods: {
     window.scrollTo(0, 0);
   },
 ```
-### How to scroll and load?
+### 滚动加载
 
-like the waterfall layout,when user scroll to some location , we request the data form back-end.
+类似于瀑布流布局的实现方式，当用户滚动到距离页面底部一定范围的时候去请求后端接口。
 
-see the codes of `src/containers/More.vue`。
+具体代码可见`src/containers/More.vue`。
 ```javascript
 handleScroll() {
   // 函数的作用是滚动加载电影详情信息
@@ -236,11 +247,11 @@ handleScroll() {
 }
 ```
 
-### How to throttle when user scroll?
+### 滚动节流
 
-To implementation throttle of scrolling, we set a `flag`.when `flag === true`, we return the scroll function.
+滚动节流主要作用是控制滚动事件的频率，设置一个`flag`。未超过频率则直接在函数中返回。
 
-see the codes of `src/containers/More.vue`.
+具体代码可见`src/containers/More.vue`
 
 ```javascript
 scrolling() {
@@ -256,11 +267,11 @@ scrolling() {
 }
 ```
 
-### 404 and loading
+5. 404与加载页面的实现
 
-set two states in `vuex`.
+这里主要是在`vuex`中设定两个状态。根据这两个状态返回不同的页面。
 
-see the codes of `src/App.vue`
+具体代码可见`src/App.vue`
 
 ```html
 <template>
@@ -277,11 +288,11 @@ see the codes of `src/App.vue`
 </template>
 ```
 
-### How to change the asynchronous state?
+### 在路由钩子函数中改变状态
 
-We often use [universal-router](https://github.com/kriasoft/universal-router) in `React`project.in that case, we can `dispatch` an `action` to change the state of `redux`, when we entry/change the router, and we use async/await fuction.
+之前在公司做React项目的时候运用了[universal-router](https://github.com/kriasoft/universal-router)，当时我们可以在进入路由的时候dispatch一个action改变状态，并且使用async/await函数实现异步。
 
-Like this code of React:
+贴一段之前的React代码：
 
 ```javascript
 async action({ store, params }) {
@@ -295,9 +306,9 @@ async action({ store, params }) {
 }
 ```
 
-And in this project, I had imitated it!
+类似的，在vue中我们也可以这么做！
 
-see the codes of `/src/router/routes`
+具体代码可见`/src/router/routes`下的相关代码
 
 ```javascript
 beforeEnter: (to, before, next) => {
@@ -327,7 +338,9 @@ beforeEnter: (to, before, next) => {
 }
 ```
 
-### Ajax
+### Ajax的封装
+
+其实我就是不想用Ajax操作的相关库罢了……
 
 ```javascript
 import serverConfig from './serverConfig';
@@ -367,8 +380,9 @@ export const getTagData = (tag, count, start) =>
   Ajax(`${serverConfig}/v2/movie/search?tag=${tag}&count=${count}&start=${start}`);
 ```
 
-### How to set proxy?
-In dev environment we use `webpack-dev-server` and `http-proxy-middleware`, and online we use `express` and `http-proxy-middleware`.
+### 代理的配置
+
+为了解决浏览器跨域问题，需要在本地服务端配合实现请求转发。
 
 ```
 proxyTable: {
@@ -382,6 +396,7 @@ proxyTable: {
 },
 ```
 
+实际环境中，服务器端配置
 ```
 var express = require('express');
 var proxy = require('http-proxy-middleware');
@@ -403,11 +418,11 @@ app.get('/', function (req, res) {
 app.listen(3000);
 ```
 
-### Responsive layout in mobile
+### 移动端的适配
 
-Use `rem`! In this project `1rem = 100px`!
+我们使用`rem`作单位，本项目中标准为1rem = 100px，适配750px设备。
 
-The browser run the codes following，change the `font-size` of the document.
+浏览器执行下列代码，改变根元素的`font-size`，做到移动端的适配。
 
 ```html
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
@@ -429,9 +444,11 @@ The browser run the codes following，change the `font-size` of the document.
 })(document, window);
 ```
 
-Chinese document referencing my student [ShanaMaid](https://github.com/ShanaMaid)!
-## Support
+文档借鉴自我的同学[ShanaMaid](https://github.com/ShanaMaid)。
+## 支持
 
-Thanks for you support,being glad for your `star`, `pr`, `follow` and `issue`.
+BUG提交请发送邮箱: me@xingbofeng.com
 
-When you see bugs.You can mail to me! me@xingbofeng.com !
+欢迎`issue`，`pr`，`star` or `follow`！我将继续开源更多有趣的项目!
+
+你的支持将有助于项目维护以及提高用户体验，感谢各位的支持！
