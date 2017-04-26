@@ -83,7 +83,7 @@ You should input some word which is you want to search, then press `Enter` and b
 - [x] preview the information of the movie.
 - [x] cache your browsing.
 
-## 目录结构
+## Directory
 ```
 |
 |—— build 
@@ -256,7 +256,11 @@ scrolling() {
 }
 ```
 
+<<<<<<< HEAD
 ### 404 and loading
+=======
+### 404与加载页面的实现
+>>>>>>> 1137402ded4d517f7b0750bc5ffd964565f4649f
 
 set two states in `vuex`.
 
@@ -434,4 +438,8 @@ Chinese document referencing my student [ShanaMaid](https://github.com/ShanaMaid
 
 Thanks for you support,being glad for your `star`, `pr`, `follow` and `issue`.
 
+<<<<<<< HEAD
 When you see bugs.You can mail to me! me@xingbofeng.com !
+=======
+你的支持将有助于项目维护以及提高用户体验，感谢各位的支持！
+>>>>>>> 1137402ded4d517f7b0750bc5ffd964565f4649f
