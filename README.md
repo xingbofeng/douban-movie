@@ -438,8 +438,4 @@ Chinese document referencing my student [ShanaMaid](https://github.com/ShanaMaid
 
 Thanks for you support,being glad for your `star`, `pr`, `follow` and `issue`.
 
-<<<<<<< HEAD
 When you see bugs.You can mail to me! me@xingbofeng.com !
-=======
-你的支持将有助于项目维护以及提高用户体验，感谢各位的支持！
->>>>>>> 1137402ded4d517f7b0750bc5ffd964565f4649f
