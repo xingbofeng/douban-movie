@@ -30,9 +30,9 @@ git clone https://github.com/xingbofeng/douban-movie.git
 
 cd douban-movie
 
-npm install
+yarn install
 
-node server/index.js
+yarn run server
 ```
 打开浏览器访问http://localhost:3000/ 体验！
 
@@ -42,9 +42,9 @@ git clone https://github.com/xingbofeng/douban-movie.git
 
 cd douban-movie
 
-npm install 
+yarn install 
 
-npm run dev
+yarn run dev
 ```
 打开浏览器访问http://localhost:8080/ 体验！
 

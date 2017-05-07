@@ -24,9 +24,9 @@ git clone https://github.com/xingbofeng/douban-movie.git
 
 cd douban-movie
 
-npm install
+yarn install
 
-node server/index.js
+yarn run server
 ```
 Then open your browser, and go to http://localhost:3000/ to enjoy it!
 
@@ -36,9 +36,9 @@ git clone https://github.com/xingbofeng/douban-movie.git
 
 cd douban-movie
 
-npm install 
+yarn install 
 
-npm run dev
+yarn run dev
 ```
 Then open your browser, and go to http://localhost:8080/ to enjoy it!
 
@@ -52,6 +52,7 @@ Then open your browser, and go to http://localhost:8080/ to enjoy it!
 - `iView` UI components library
 - `vue-lazyload` help us lazyload images
 - `rem` + `flex` + `grid` responsive layout in mobile
+- `yarn` package manager.
 - `postman` test our interface
 
 ## What's this?
