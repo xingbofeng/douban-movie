@@ -6,6 +6,8 @@ import {
   commingSoon,
   top250,
   usBox,
+  weekly,
+  newMovies,
 } from '../server';
 
 export default {
@@ -23,8 +25,10 @@ export default {
     Promise.all([
       hotMovie(8, 0),
       commingSoon(8, 0),
+      newMovies(8, 0),
       top250(8, 0),
       usBox(8, 0),
+      weekly(8, 0),
     ]).then((homeData) => {
       // 成功则commit后台接口的数据，并把NET_ERROR的数据置空，并把加载中的状态置为false。
       store.commit(types.HOME_DATA, homeData);

@@ -6,6 +6,8 @@ import {
   commingSoon,
   top250,
   usBox,
+  weekly,
+  newMovies,
 } from '../server';
 
 const requests = (title) => {
@@ -21,6 +23,12 @@ const requests = (title) => {
     }
     case '豆瓣电影北美票房榜': {
       return usBox(18, 0);
+    }
+    case '豆瓣电影新片榜': {
+      return newMovies(18, 0);
+    }
+    case '豆瓣电影本周口碑榜': {
+      return weekly(18, 0);
     }
     default : {
       return new Promise((resolve, reject) => {
