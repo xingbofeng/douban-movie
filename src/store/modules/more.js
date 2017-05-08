@@ -4,6 +4,8 @@ import {
   commingSoon,
   top250,
   usBox,
+  weekly,
+  newMovies,
 } from '../../router/server';
 
 const requests = (title, count, start) => {
@@ -19,6 +21,12 @@ const requests = (title, count, start) => {
     }
     case '豆瓣电影北美票房榜': {
       return usBox(count, start);
+    }
+    case '豆瓣电影新片榜': {
+      return newMovies(count, start);
+    }
+    case '豆瓣电影本周口碑榜': {
+      return weekly(count, start);
     }
     default : {
       return new Promise((resolve, reject) => {
