@@ -21,7 +21,7 @@ web端访问已设置宽度适配。
 - [css-grid-flex(关于css的grid布局和flex布局的入门心得)](https://github.com/xingbofeng/css-grid-flex)
 
 ## 在线版
-[点击进入](http://www.angryzhangzhe.cn:3000/)
+[点击进入](http://douban.xingbofeng.com)
 
 本地体验线上版本：
 
