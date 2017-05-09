@@ -43,6 +43,7 @@ header {
   font-weight: bold;
   border-bottom: 0.02rem solid #f3f3f3;
   position: fixed;
+  z-index: 10000;
   top: 0;
   background-color: #fff;
   width: 7.5rem;
