@@ -9,6 +9,7 @@ import search from './routes/search';
 import comments from './routes/comments';
 import review from './routes/review';
 import reviews from './routes/reviews';
+import photos from './routes/photos';
 import store from './../store';
 import * as types from './../store/mutation-types';
 
@@ -25,6 +26,7 @@ const router = new Router({
     comments,
     review,
     reviews,
+    photos,
     error, // 404页面一定要在最后面
   ],
 });
