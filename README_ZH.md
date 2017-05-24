@@ -1,4 +1,13 @@
 # douban-movie(豆瓣电影wap版)
+
+[![downloads-image](http://img.shields.io/npm/dm/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![npm-image](http://img.shields.io/npm/v/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![travis-image](http://img.shields.io/travis/xingbofeng/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![appveyor-image](https://ci.appveyor.com/api/projects/status/bsu9w9ar8pboc2nj?svg=true)](https://github.com/xingbofeng/douban-movie)
+[![codeship-image](https://codeship.com/projects/79da7240-5481-0132-ea32-42ab35009c21/status)](https://github.com/xingbofeng/douban-movie)
+[![david-dm-image](https://david-dm.org/xingbofeng/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![david-dm-dev-image](https://david-dm.org/xingbofeng/douban-movie/dev-status.svg)](https://github.com/xingbofeng/douban-movie)
+
 用vue全家桶仿写豆瓣电影wap版。
 
 最近在公司项目中尝试使用vue，但奈何自己初学水平有限，上了vue没有上vuex，开发过程特别难受。
@@ -412,7 +421,7 @@ app.use('/v2', proxy({
 }
 ));
 
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 app.listen(3000);
