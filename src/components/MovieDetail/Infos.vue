@@ -36,7 +36,7 @@
       <article>
         <router-link
           :to="`/tag/${item}`"
-          v-for="item in currentMovie.genres"
+          v-for="item in currentMovie.tags"
           class="tagItem"
           :key="item"
         >
@@ -45,7 +45,7 @@
       </article>
     </div>
     <div>
-      <h2>影人</h2>
+      <h2>{{ currentMovie.title }}的导演和主演</h2>
       <article class="celebrityItems">
         <router-link
           :to="`/tag/${item.name}`"

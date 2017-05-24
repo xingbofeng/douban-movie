@@ -10,3 +10,5 @@ export const CURRENT_MOVIE = 'CURRENT_MOVIE';
 export const CURRENT_TAG = 'CURRENT_TAG';
 // 首页查看更多
 export const CURRENT_SEE_MORE = 'CURRENT_SEE_MORE';
+// 电影短评列表
+export const CURRENT_COMMENTS = 'CURRENT_COMMENTS';

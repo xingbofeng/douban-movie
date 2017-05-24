@@ -27,6 +27,7 @@ export default {
   created() {
     // 销毁最近所看电影实例
     window.localStorage.doubanMovieCurrentPage = '{}';
+    window.localStorage.doubanMovieCurrentComments = '{}';
   },
 
   computed: mapState({

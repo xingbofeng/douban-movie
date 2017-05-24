@@ -1,5 +1,14 @@
 # douban-movie
-It is an application,like [电影 - 豆瓣](https://m.douban.com/movie/).
+
+[![downloads-image](http://img.shields.io/npm/dm/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![npm-image](http://img.shields.io/npm/v/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![travis-image](http://img.shields.io/travis/xingbofeng/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![appveyor-image](https://ci.appveyor.com/api/projects/status/bsu9w9ar8pboc2nj?svg=true)](https://github.com/xingbofeng/douban-movie)
+[![codeship-image](https://codeship.com/projects/79da7240-5481-0132-ea32-42ab35009c21/status)](https://github.com/xingbofeng/douban-movie)
+[![david-dm-image](https://david-dm.org/xingbofeng/douban-movie.svg)](https://github.com/xingbofeng/douban-movie)
+[![david-dm-dev-image](https://david-dm.org/xingbofeng/douban-movie/dev-status.svg)](https://github.com/xingbofeng/douban-movie)
+
+It is the douban-movie Application built with webpack + vue + vuex + vue-router + iView.
 
 [中文文档](./README_ZH.md)
 
@@ -8,11 +17,6 @@ because the limit of [open API](https://developers.douban.com/wiki/?title=movie_
 Enter GitHub to see [code](https://github.com/xingbofeng/douban-movie)!
 
 Thanks for you support, waiting for your `issue`, `pr`, `star` or `follow`!I will release more interesting project in the future!
-
-recommended some project writing by myself.
-- [wx-audio](https://github.com/xingbofeng/wx-audio)
-- [paintCanvas](https://github.com/xingbofeng/paintCanvas)
-- [css-grid-flex](https://github.com/xingbofeng/css-grid-flex)
 
 ## Online
 [Click Here](https://douban.xingbofeng.com/)
@@ -30,7 +34,7 @@ yarn run server
 ```
 Then open your browser, and go to http://localhost:3000/ to enjoy it!
 
-## Dev
+## Development
 ```
 git clone https://github.com/xingbofeng/douban-movie.git
 
@@ -42,7 +46,7 @@ yarn run dev
 ```
 Then open your browser, and go to http://localhost:8080/ to enjoy it!
 
-## Picture.gif
+## Preview
 ![](https://user-gold-cdn.xitu.io/2017/4/23/1e8f797a25d254918d1d0409550e2727.gif)
 
 ## Technology stack
@@ -55,7 +59,7 @@ Then open your browser, and go to http://localhost:8080/ to enjoy it!
 - `yarn` package manager.
 - `postman` test our interface
 
-## What's this?
+## Functions
 ### src/containers/Home.vue
 - [x] hot-movie, comming-soon, top250 and us-box.
 - [x] horizontal scrolling.
@@ -398,7 +402,7 @@ app.use('/v2', proxy({
 }
 ));
 
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 app.listen(3000);
