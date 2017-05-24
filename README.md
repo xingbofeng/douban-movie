@@ -46,7 +46,7 @@ yarn run dev
 ```
 Then open your browser, and go to http://localhost:8080/ to enjoy it!
 
-## Picture.gif
+## Preview
 ![](https://user-gold-cdn.xitu.io/2017/4/23/1e8f797a25d254918d1d0409550e2727.gif)
 
 ## Technology stack
